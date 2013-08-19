@@ -88,9 +88,16 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 				} else if ((i == 2 || i == 3) && (j >=0)) {
 					brick.setFilled(true);
 					brick.setColor(Color.ORANGE);
+				} else if ((i == 4 || i == 5) && (j >=0)) {
+					brick.setFilled(true);
+					brick.setColor(Color.YELLOW);
+				} else if ((i == 6 || i == 7) && (j >=0)) {
+					brick.setFilled(true);
+					brick.setColor(Color.GREEN);
+				} else if ((i == 8 || i == 9) && (j >=0)) {
+					brick.setFilled(true);
+					brick.setColor(Color.CYAN);
 				}
-				
-				
 				
 				
 				add (brick);
