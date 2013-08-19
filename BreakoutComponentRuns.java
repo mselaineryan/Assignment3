@@ -60,11 +60,12 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
+		
 		/* This method runs an outstanding and exciting version of
 		 * the arcade game Breakout! */
 		
 		/* top left corner of upper leftmost brick */
-		int startX = WIDTH - ((BRICK_WIDTH * NBRICKS_PER_ROW) + (BRICK_SEP * (NBRICKS_PER_ROW - 1))/2);
+		int startX = (WIDTH - ((BRICK_WIDTH * NBRICKS_PER_ROW) + (BRICK_SEP * (NBRICKS_PER_ROW - 1))))/2;
 		int startY = BRICK_Y_OFFSET;
 		
 		for (int i = 0; i < NBRICK_ROWS; i ++) {
