@@ -60,7 +60,37 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		/* You fill this in, along with any subsidiary methods */
+		/* This method runs an outstanding and exciting version of
+		 * the arcade game Breakout! */
+		
+		/* top left corner of upper leftmost brick */
+		int startX = (WIDTH - ((BRICK_WIDTH * NBRICKS_PER_ROW) + (BRICK_SEP * (NBRICKS_PER_ROW - 1))))/2;
+		int startY = BRICK_Y_OFFSET;
+		
+		for (int i = 0; i < NBRICK_ROWS; i ++) {
+			
+			/* This loop lays down 10 bricks in a row, the outer loop lays down the columns.
+			 * The two loops could have been combined because the number rows and bricks per row 
+			 * are both 10, but they are separated so that the set up works even if one or both of
+			 * those parameters gets changed.
+			 */
+			for (int j = 0; j < NBRICKS_PER_ROW; j++) {
+			
+				int x = startX + ((BRICK_WIDTH + BRICK_SEP) * j);
+				int y = startY;
+				
+				GRect brick = new GRect (x, y, BRICK_WIDTH, BRICK_HEIGHT);
+				
+				add (brick);
+			
+			}
+			
+			startY += ((BRICK_HEIGHT + BRICK_SEP));
+		
+	
+		}
+		
 	}
-
 }
+
+
