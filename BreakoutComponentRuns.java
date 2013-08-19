@@ -80,6 +80,8 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 				int y = startY;
 				
 				GRect brick = new GRect (x, y, BRICK_WIDTH, BRICK_HEIGHT);
+				
+				add (brick);
 			
 			}
 			
