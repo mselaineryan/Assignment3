@@ -85,7 +85,7 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 			
 			}
 			
-			startY = startY + ((BRICK_HEIGHT + BRICK_SEP)* i);
+			startY += ((BRICK_HEIGHT + BRICK_SEP));
 		
 	
 		}
