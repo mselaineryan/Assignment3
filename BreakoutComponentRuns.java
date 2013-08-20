@@ -89,10 +89,10 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 			
 			if (lastX < 0) {
 				gobj.setLocation (0,y);
-				if (lastX + PADDLE_WIDTH >= WIDTH) {
-					gobj.setLocation (WIDTH-PADDLE_WIDTH, y);
-				}
 			}
+			if (lastX + PADDLE_WIDTH >= WIDTH) {
+				gobj.setLocation (WIDTH-PADDLE_WIDTH, y);
+			}	
 		}
 		
 		/*Keeps paddle from going off the edges*/
