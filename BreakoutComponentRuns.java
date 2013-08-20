@@ -61,54 +61,16 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		
-		/* This method runs an outstanding and exciting version of
-		 * the arcade game Breakout! */
+		/* This method runs individual components of the breakout game for testing
+		 * purposes */
+		int x = (WIDTH - PADDLE_WIDTH)/2;
+		int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		
-		/* top left corner of upper leftmost brick */
-		int startX = (WIDTH - ((BRICK_WIDTH * NBRICKS_PER_ROW) + (BRICK_SEP * (NBRICKS_PER_ROW - 1))))/2;
-		int startY = BRICK_Y_OFFSET;
-		
-		for (int i = 0; i < NBRICK_ROWS; i ++) {
-			
-			/* This loop lays down 10 bricks in a row, the outer loop lays down the columns.
-			 * The two loops could have been combined because the number rows and bricks per row 
-			 * are both 10, but they are separated so that the set up works even if one or both of
-			 * those parameters gets changed.
-			 */
-			for (int j = 0; j < NBRICKS_PER_ROW; j++) {
-			
-				int x = startX + ((BRICK_WIDTH + BRICK_SEP) * j);
-				int y = startY;
-				
-				GRect brick = new GRect (x, y, BRICK_WIDTH, BRICK_HEIGHT);
-				
-				if ((i == 0 || i == 1) && (j >= 0)) {
-					brick.setFilled(true);
-					brick.setColor(Color.RED);
-				} else if ((i == 2 || i == 3) && (j >=0)) {
-					brick.setFilled(true);
-					brick.setColor(Color.ORANGE);
-				} else if ((i == 4 || i == 5) && (j >=0)) {
-					brick.setFilled(true);
-					brick.setColor(Color.YELLOW);
-				} else if ((i == 6 || i == 7) && (j >=0)) {
-					brick.setFilled(true);
-					brick.setColor(Color.GREEN);
-				} else if ((i == 8 || i == 9) && (j >=0)) {
-					brick.setFilled(true);
-					brick.setColor(Color.CYAN);
-				}
-				
-				
-				add (brick);
-			
-			}
-			
-			startY += ((BRICK_HEIGHT + BRICK_SEP));
-		
-	
-		}
-		
+		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle.setFilled (true);
+		paddle.setColor(Color.BLACK);
+		add (paddle);
+		addMouseListeners();
 	}
 	
 	
