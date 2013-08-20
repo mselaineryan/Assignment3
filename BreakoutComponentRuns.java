@@ -64,7 +64,7 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 		/* This method runs individual components of the breakout game for testing
 		 * purposes */
 		int x = (WIDTH - PADDLE_WIDTH)/2;
-		int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+		
 		
 		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled (true);
@@ -73,6 +73,24 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
+	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/
+	public void mousePressed(MouseEvent e) {
+		lastX = e.getX ();
+		gobj = getElementAt (lastX,y);
+		
+	}
+	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
+	public void mouseDragged (MouseEvent e) {
+		if (gobj != null) {
+			gobj.move (e.getX () - lastX, y);
+			lastX = e.getX ();
+		}
+	}
+	
+	/* Instance variables*/
+	private GObject gobj; //the object being dragged
+	private double lastX; //the last mouse X position
+	private int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 	
 		
 }
