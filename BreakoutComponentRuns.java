@@ -89,8 +89,8 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 		}
 		
 		/*Keeps paddle from going off the edges*/
-		if 
-		}
+		
+		
 	}
 	
 	/* Instance variables*/
