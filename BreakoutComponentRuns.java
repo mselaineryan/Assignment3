@@ -83,16 +83,16 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
-			if (lastX < 0) {
-				lastX = 0;
-				if (lastX + PADDLE_WIDTH >= WIDTH) {
-					lastX = WIDTH-PADDLE_WIDTH;
-				}
-			}
 			gobj.move (e.getX () - lastX, lastY- y);
 			lastX = e.getX ();
 			lastY = y;
 			
+			if (lastX < 0) {
+				gobj.setLocation (0,y);
+				if (lastX + PADDLE_WIDTH >= WIDTH) {
+					gobj.setLocation (WIDTH-PADDLE_WIDTH, y);
+				}
+			}
 		}
 		
 		/*Keeps paddle from going off the edges*/
