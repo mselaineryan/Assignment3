@@ -87,6 +87,11 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 			lastX = e.getX ();
 			lastY = y;
 		}
+		
+		/*Keeps paddle from going off the edges*/
+		if (e.getX () > WIDTH) {
+			lastX = WIDTH;
+		}
 	}
 	
 	/* Instance variables*/
