@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 		 * the arcade game Breakout! */
 		
 		setUpGame();
-		//playGame();
+		playGame();
 		
 	}
 	
@@ -72,9 +72,12 @@ public class Breakout extends GraphicsProgram {
 	
 		createBricks();
 		createPaddle();
-		//createBall();
 		
+	}
+	
+	private void playGame() {
 		
+		createBouncingBall();
 	}
 	
 	private void createBricks() {
@@ -136,19 +139,19 @@ public class Breakout extends GraphicsProgram {
 		
 		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled (true);
-		paddle.setColor(Color.BLACK);
+		//paddle.setColor(Color.BLACK);
 		add (paddle);
 		addMouseListeners();
 	}
 	
-	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/
+	/* I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/
 	public void mousePressed(MouseEvent e) {
 		lastX = e.getX ();
 		lastY = y;
 		gobj = getElementAt (lastX, lastY);
 		
 	}
-	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
+	/* I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/ 
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
 			gobj.move (e.getX () - lastX, lastY- y);
