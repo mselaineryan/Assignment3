@@ -77,7 +77,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void playGame() {
 		
-		createBouncingBall();
+		//createBouncingBall();
 	}
 	
 	private void createBricks() {
