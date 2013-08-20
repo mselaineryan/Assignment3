@@ -129,7 +129,10 @@ public class Breakout extends GraphicsProgram {
 	
 		}
 	}
+	
+	private void createPaddle () {
 		
+	}
 }
 
 
