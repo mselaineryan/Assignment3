@@ -82,7 +82,7 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
-			gobj.move (e.getX () - lastX, y);
+			gobj.move (e.getX () - lastX, e.getY() - y);
 			lastX = e.getX ();
 		}
 	}
