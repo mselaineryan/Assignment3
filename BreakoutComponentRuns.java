@@ -65,7 +65,6 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 		 * purposes */
 		int x = (WIDTH - PADDLE_WIDTH)/2;
 		
-		
 		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled (true);
 		paddle.setColor(Color.BLACK);
@@ -87,15 +86,17 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 			lastX = e.getX ();
 			lastY = y;
 			
+			/*Keeps paddle from running off the left side of the screen*/
 			if (lastX < 0) {
 				gobj.setLocation (0,y);
 			}
+			/*Keeps paddle from running off the right side of the screen*/
 			if (lastX + PADDLE_WIDTH >= WIDTH) {
 				gobj.setLocation (WIDTH-PADDLE_WIDTH, y);
 			}	
 		}
 		
-		/*Keeps paddle from going off the edges*/
+		
 		
 		
 	}

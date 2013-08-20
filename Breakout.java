@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 		 * the arcade game Breakout! */
 		
 		setUpGame();
-		playGame();
+		//playGame();
 		
 	}
 	
@@ -72,7 +72,7 @@ public class Breakout extends GraphicsProgram {
 	
 		createBricks();
 		createPaddle();
-		createBall();
+		//createBall();
 		
 		
 	}
@@ -132,7 +132,51 @@ public class Breakout extends GraphicsProgram {
 	
 	private void createPaddle () {
 		
+		int x = (WIDTH - PADDLE_WIDTH)/2;
+		
+		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle.setFilled (true);
+		paddle.setColor(Color.BLACK);
+		add (paddle);
+		addMouseListeners();
 	}
+	
+	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/
+	public void mousePressed(MouseEvent e) {
+		lastX = e.getX ();
+		lastY = y;
+		gobj = getElementAt (lastX, lastY);
+		
+	}
+	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
+	public void mouseDragged (MouseEvent e) {
+		if (gobj != null) {
+			gobj.move (e.getX () - lastX, lastY- y);
+			lastX = e.getX ();
+			lastY = y;
+			
+			/*Keeps paddle from running off the left side of the screen*/
+			if (lastX < 0) {
+				gobj.setLocation (0,y);
+			}
+			/*Keeps paddle from running off the right side of the screen*/
+			if (lastX + PADDLE_WIDTH >= WIDTH) {
+				gobj.setLocation (WIDTH-PADDLE_WIDTH, y);
+			}	
+		}
+		
+		
+		
+		
+	}
+	
+	/* Instance variables*/
+	private GObject gobj; //the object being dragged
+	private double lastX; //the last mouse X position
+	private double lastY;
+	private int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+	
 }
+
 
 
