@@ -77,13 +77,13 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 	public void mousePressed(MouseEvent e) {
 		lastX = e.getX ();
 		lastY = y;
-		gobj = getElementAt (lastX,y);
+		gobj = getElementAt (lastX, lastY);
 		
 	}
 	/* I used code from p. 204 of Art & Science of Java, prelim pdf draft*/ 
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
-			gobj.move (e.getX () - lastX, lastY);
+			gobj.move (e.getX () - lastX, lastY- y);
 			lastX = e.getX ();
 			lastY = y;
 		}
