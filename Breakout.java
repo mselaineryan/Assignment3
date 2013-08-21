@@ -77,7 +77,10 @@ public class Breakout extends GraphicsProgram {
 	
 	private void playGame() {
 		
-		//createBouncingBall();
+		createBouncingBall();
+		//checkForCollisions();
+		//pause (DELAY);
+		//checkForLastBrick ();
 	}
 	
 	private void createBricks() {
@@ -167,8 +170,12 @@ public class Breakout extends GraphicsProgram {
 			}	
 		}
 		
-		
-		
+	}
+	
+	private void createBouncingBall() {
+		ball = new GOval (getHeight()/2 - BALL_RADIUS,getWidth()/2 -BALL_RADIUS, BALL_RADIUS*2,BALL_RADIUS*2 );
+		ball.setFilled(true);
+		add (ball);
 		
 	}
 	
@@ -177,6 +184,7 @@ public class Breakout extends GraphicsProgram {
 	private double lastX; //the last mouse X position
 	private double lastY;
 	private int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+	private GOval ball;
 	
 }
 
