@@ -78,8 +78,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private void playGame() {
 		
-		//while (ball.getX() < WIDTH) {
-		moveBall(); //}
+		
+		moveBall();
 		//checkForCollisions();
 		//pause (DELAY);
 		//checkForLastBrick ();
@@ -187,8 +187,17 @@ public class Breakout extends GraphicsProgram {
 	private void moveBall() {
 		vx = rgen.nextDouble (1.0, 3.0);
 		if (rgen.nextBoolean (0.5)) vx = -vx;
-		ball.move (vx,vy);
 		
+		while (ball.getY () > 0) {
+		ball.move (vx,vy); 
+		}
+		if (ball.getX () + (BALL_RADIUS*2) > WIDTH) vx = -vx;
+		if (ball.getX () < 0) vx = -vx;
+		if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) vy = -vy;
+		if (ball.getY() < 0)  {
+			vy = -vy;
+			ball.move(vx,vy);
+		}
 	}
 	
 	//private void 
