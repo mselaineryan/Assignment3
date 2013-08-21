@@ -72,12 +72,13 @@ public class Breakout extends GraphicsProgram {
 	
 		createBricks();
 		createPaddle();
+		createBall();
 		
 	}
 	
 	private void playGame() {
 		
-		createBouncingBall();
+		moveBall();
 		//checkForCollisions();
 		//pause (DELAY);
 		//checkForLastBrick ();
@@ -146,14 +147,16 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
-	/* I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/
+	/* Records where the mouse was pressed.
+	 * I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/
 	public void mousePressed(MouseEvent e) {
 		lastX = e.getX ();
 		lastY = y;
 		gobj = getElementAt (lastX, lastY);
 		
 	}
-	/* I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/ 
+	/* Drags the paddle to a new place on the x-axis.
+	 * I used code from p. 204 of Art & Science of Java, preliminary PDF draft*/ 
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
 			gobj.move (e.getX () - lastX, lastY- y);
@@ -172,11 +175,20 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	private void createBouncingBall() {
-		
+	private void createBall() {
+		/* creates a black ball and puts it at the center of the screen*/
 		ball = new GOval (X_START, Y_START, BALL_RADIUS*2, BALL_RADIUS*2 );
 		ball.setFilled(true);
 		add (ball);
+		
+	}
+	
+	private void moveBall() {
+		vx = rgen.nextDouble (1.0, 3.0);
+		if (rgen.nextBoolean (0.5)) vx = -vx;
+		ball.move (vx,vy);
+		
+		
 		
 	}
 	
@@ -188,6 +200,9 @@ public class Breakout extends GraphicsProgram {
 	private GOval ball;
 	private static final double X_START = (WIDTH - (BALL_RADIUS*2))/2;
 	private static final double Y_START = (HEIGHT/2 - BALL_RADIUS);
+	private RandomGenerator rgen = RandomGenerator.getInstance ();
+	private double vx;
+	private double vy = 3.0;
 	
 }
 
