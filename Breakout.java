@@ -173,7 +173,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void createBouncingBall() {
-		ball = new GOval (getHeight()/2 - BALL_RADIUS,getWidth()/2 -BALL_RADIUS, BALL_RADIUS*2,BALL_RADIUS*2 );
+		ball = new GOval (HEIGHT/2 - BALL_RADIUS,  WIDTH/2 -BALL_RADIUS, BALL_RADIUS*2,BALL_RADIUS*2 );
 		ball.setFilled(true);
 		add (ball);
 		
