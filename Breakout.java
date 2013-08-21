@@ -223,7 +223,7 @@ public class Breakout extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance ();
 	private double vx;
 	private double vy = 1.0;
-	private static final int DELAY = 250;
+	private static final int DELAY = 400;
 	
 }
 
