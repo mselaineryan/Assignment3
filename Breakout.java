@@ -187,7 +187,7 @@ public class Breakout extends GraphicsProgram {
 	private int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 	private GOval ball;
 	private static final double X_START = (HEIGHT/2) - BALL_RADIUS;
-	private static final double Y_START = (WIDTH -(BALL_RADIUS*2))/2;
+	private static final double Y_START = (WIDTH - (BALL_RADIUS*2))/2;
 	
 }
 
