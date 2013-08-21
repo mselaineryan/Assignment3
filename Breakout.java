@@ -191,11 +191,21 @@ public class Breakout extends GraphicsProgram {
 		while (ball.getY () > 0) {
 		ball.move (vx,vy); 
 		}
-		if (ball.getX () + (BALL_RADIUS*2) > WIDTH) vx = -vx;
-		if (ball.getX () < 0) vx = -vx;
-		if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) vy = -vy;
+		if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
+			vx = -vx;
+			pause (DELAY);
+		}
+		if (ball.getX () < 0) {
+			vx = -vx;
+			pause (DELAY);
+		}
+		if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
+			vy = -vy;
+			pause (DELAY);
+		}
 		if (ball.getY() < 0)  {
 			vy = -vy;
+			pause (DELAY);
 			
 		}
 	}
@@ -213,6 +223,7 @@ public class Breakout extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance ();
 	private double vx;
 	private double vy = 1.0;
+	private static final int DELAY = 50;
 	
 }
 
