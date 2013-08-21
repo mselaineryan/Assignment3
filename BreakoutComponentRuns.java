@@ -67,7 +67,7 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 		
 		
 		
-	}	
+}	
 		
 		
 		
@@ -78,7 +78,7 @@ public class BreakoutComponentRuns extends GraphicsProgram {
 	/* Instance variables*/
 	private GOval ball;
 	private static final double X_START = (HEIGHT/2) - BALL_RADIUS;
-	private static final double Y_START = (WIDTH - (BALL_RADIUS*2))/2;
+	private static final double Y_START = (WIDTH/2);
 	
 		
 }
