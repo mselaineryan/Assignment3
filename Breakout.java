@@ -188,9 +188,8 @@ public class Breakout extends GraphicsProgram {
 		vx = rgen.nextDouble (1.0, 3.0);
 		if (rgen.nextBoolean (0.5)) vx = -vx;
 		
-		
+		while (true) {
 		ball.move (vx,vy); 
-		
 		if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
 			vx = -vx;
 			pause (DELAY);
@@ -207,6 +206,7 @@ public class Breakout extends GraphicsProgram {
 			vy = -vy;
 			pause (DELAY);
 			
+		}
 		}
 	}
 	
