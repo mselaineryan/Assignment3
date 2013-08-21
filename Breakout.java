@@ -189,9 +189,9 @@ public class Breakout extends GraphicsProgram {
 		if (rgen.nextBoolean (0.5)) vx = -vx;
 		ball.move (vx,vy);
 		
-		
-		
 	}
+	
+	//private void 
 	
 	/* Instance variables*/
 	private GObject gobj; //the object being dragged
@@ -203,7 +203,7 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_START = (HEIGHT/2 - BALL_RADIUS);
 	private RandomGenerator rgen = RandomGenerator.getInstance ();
 	private double vx;
-	private double vy = 3.0;
+	private double vy = 1.0;
 	
 }
 
