@@ -102,7 +102,7 @@ public class Breakout extends GraphicsProgram {
 				int x = startX + ((BRICK_WIDTH + BRICK_SEP) * j);
 				int y = startY;
 				
-				GRect brick = new GRect (x, y, BRICK_WIDTH, BRICK_HEIGHT);
+				brick = new GRect (x, y, BRICK_WIDTH, BRICK_HEIGHT);
 				
 				/* These cascading if statements fill in the different colors
 				 * two rows at a time.
@@ -221,14 +221,22 @@ public class Breakout extends GraphicsProgram {
 			GObject collobj = getElementAt (ball.getX(), ball.getY());
 			if (collobj == paddle) {
 				vy = -vy;
+			if (collobj == brick) {
+				vy = -vy;
+				remove (brick);
+				
 			}
 		}
-		
-		
-			
-			
-		
+	
+	
+		}
 	}
+		
+		
+			
+			
+		
+	
 	
 	//private void 
 	
@@ -245,6 +253,7 @@ public class Breakout extends GraphicsProgram {
 	private double vy = 1.0;
 	private static final int DELAY = 400;
 	private GRect paddle; 
+	private GRect brick;
 	
 }
 
