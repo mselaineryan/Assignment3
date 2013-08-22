@@ -80,8 +80,7 @@ public class Breakout extends GraphicsProgram {
 		
 		
 		moveBall();
-		//checkForCollisions();
-		//pause (DELAY);
+		checkForCollisions();
 		//checkForLastBrick ();
 	}
 	
@@ -142,7 +141,7 @@ public class Breakout extends GraphicsProgram {
 		
 		int x = (WIDTH - PADDLE_WIDTH)/2;
 		
-		GRect paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle = new GRect (x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled (true);
 		add (paddle);
 		addMouseListeners();
@@ -210,13 +209,34 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	private void checkForCollisions () {
+		
+		collideWithPaddle ();
+		//collideWithBrick ();
+		
+	}
+	
+	private void collideWithPaddle() {
+		if (ball != null) {
+			GObject collobj = getElementAt (ball.getX(), ball.getY());
+			if (collobj == paddle) {
+				vy = -vy;
+			}
+		}
+		
+		
+			
+			
+		
+	}
+	
 	//private void 
 	
 	/* Instance variables*/
 	private GObject gobj; //the object being dragged
 	private double lastX; //the last mouse X position
 	private double lastY;
-	private int y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+	private double y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 	private GOval ball;
 	private static final double X_START = (WIDTH - (BALL_RADIUS*2))/2;
 	private static final double Y_START = (HEIGHT/2 - BALL_RADIUS);
@@ -224,6 +244,7 @@ public class Breakout extends GraphicsProgram {
 	private double vx;
 	private double vy = 1.0;
 	private static final int DELAY = 400;
+	private GRect paddle; 
 	
 }
 
