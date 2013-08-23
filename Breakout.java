@@ -82,6 +82,7 @@ public class Breakout extends GraphicsProgram {
 		moveBall();
 		checkForCollisions();
 		//checkForLastBrick ();
+		//game over or congratulations message
 	}
 	
 	private void createBricks() {
@@ -191,19 +192,19 @@ public class Breakout extends GraphicsProgram {
 		ball.move (vx,vy); 
 			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
 				vx = -vx;
-				pause (DELAY);
+				//pause (DELAY);
 		}
 			if (ball.getX () < 0) {
 				vx = -vx;
-				pause (DELAY);
+				//pause (DELAY);
 		}
 			if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
 				vy = -vy;
-				pause (DELAY);
+				//pause (DELAY);
 		}
 			if (ball.getY() < 0)  {
 				vy = -vy;
-				pause (DELAY);
+				//pause (DELAY);
 			
 		}
 		}
