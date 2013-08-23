@@ -211,12 +211,12 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkForCollisions () {
 		
-		collideWithPaddle ();
-		//collideWithBrick ();
+		collideWithObject ();
+
 		
 	}
 	
-	private void collideWithPaddle() {
+	private void collideWithObject() {
 		if (ball != null) {
 			GObject collobj = getElementAt (ball.getX(), ball.getY());
 			if (collobj == paddle) {
