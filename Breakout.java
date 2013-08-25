@@ -188,21 +188,21 @@ public class Breakout extends GraphicsProgram {
 		vx = rgen.nextDouble (1.0, 3.0);
 		if (rgen.nextBoolean (0.5)) vx = -vx;
 		
-		while (true) {
+		while (NTURNS > 0) {
 		ball.move (vx,vy); 
 			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
 				vx = -vx;
 				pause (DELAY);
 			}
-			if (ball.getX () < 0) {
+			else if (ball.getX () < 0) {
 				vx = -vx;
 				pause (DELAY);
 			}
-			if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
+			else if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
 				vy = -vy;
 				pause (DELAY);
 			}
-			if (ball.getY() < 0)  {
+			else if (ball.getY() < 0)  {
 				vy = -vy;
 				pause (DELAY);
 				
