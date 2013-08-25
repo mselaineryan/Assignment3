@@ -284,8 +284,8 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_START = (HEIGHT/2 - BALL_RADIUS);
 	private RandomGenerator rgen = RandomGenerator.getInstance ();
 	private double vx;
-	private double vy = 0.5;
-	private static final int DELAY = 400;
+	private double vy = 1.0;
+	private static final int DELAY = 200;
 	private GRect paddle; 
 	private GRect brick;
 	
