@@ -197,8 +197,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkForCollisions () {
 		
-		checkForWalls();
-		//checkForObjects();
+		//checkForWalls();
+		checkForObjects();
 		
 	}
 	
@@ -230,7 +230,7 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	    /*private void checkForObjects () {
+	    private void checkForObjects () {
 		
 		GObject collider = getElementAt (ball.getX(), ball.getY());
 			if (collider == paddle) {
@@ -250,7 +250,7 @@ public class Breakout extends GraphicsProgram {
 				vy = -vy;
 			}
 	}
-	*/
+	
 	
 		
 		
