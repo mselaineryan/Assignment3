@@ -201,8 +201,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkForCollisions () {
 		
-		checkForWalls();
-		checkForObjects();
+		//checkForWalls();
+		//checkForObjects();
 		
 	}
 	
