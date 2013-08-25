@@ -208,23 +208,23 @@ public class Breakout extends GraphicsProgram {
 		/* checking for walls */
 			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
 				vx = -vx;
-			double diff = ball.getX() + 2 * BALL_RADIUS - WIDTH;
-	            ball.move(-2 * diff, 0);
+			//double diff = ball.getX() + 2 * BALL_RADIUS - WIDTH;
+	           // ball.move(-2 * diff, 0);
 			}
 			else if (ball.getX () < 0) {
 				vx = -vx;
-			double diff = ball.getX();
-				ball.move(2* diff, 0);
+			//double diff = ball.getX();
+				//ball.move(2* diff, 0);
 				}
 			else if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
 				vy = -vy;
-			double diff = ball.getY() + (BALL_RADIUS*2);
-				ball.move(0, -2*diff);
+			//double diff = ball.getY() + (BALL_RADIUS*2);
+				//ball.move(0, -2*diff);
 			}
 			else if (ball.getY() < 0)  {
 				vy = -vy;
-			double diff = ball.getY();
-				ball.move(0, 2*diff);
+			//double diff = ball.getY();
+				//ball.move(0, 2*diff);
 				
 			}
 		
