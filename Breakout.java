@@ -191,7 +191,6 @@ public class Breakout extends GraphicsProgram {
 		vx = rgen.nextDouble (1.0, 3.0);
 		if (rgen.nextBoolean (0.5)) vx = -vx;
 		
-		
 		ball.move (vx,vy);
 		
 	}
@@ -231,7 +230,7 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	    private void checkForObjects () {
+	    /*private void checkForObjects () {
 		
 		GObject collider = getElementAt (ball.getX(), ball.getY());
 			if (collider == paddle) {
@@ -251,7 +250,7 @@ public class Breakout extends GraphicsProgram {
 				vy = -vy;
 			}
 	}
-	
+	*/
 	
 		
 		
