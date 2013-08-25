@@ -82,7 +82,7 @@ public class Breakout extends GraphicsProgram {
 		
 		moveBall();
 		checkForCollisions();
-		pause (DELAY);
+		//pause (DELAY);
 		//checkForLastBrick ();
 		//game over or congratulations message
 		}
@@ -197,7 +197,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkForCollisions () {
 		
-		//checkForWalls();
+		checkForWalls();
 		checkForObjects();
 		
 	}
