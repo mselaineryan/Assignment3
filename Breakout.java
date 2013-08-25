@@ -81,8 +81,8 @@ public class Breakout extends GraphicsProgram {
 		while (NTURNS > 0) {
 		
 		moveBall();
-		checkForCollisions();
-		//pause (DELAY);
+		//checkForCollisions();
+		pause (DELAY);
 		//checkForLastBrick ();
 		//game over or congratulations message
 		}
