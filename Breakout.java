@@ -234,23 +234,20 @@ public class Breakout extends GraphicsProgram {
 	    private void checkForObjects () {
 		
 		GObject collider = getElementAt (ball.getX(), ball.getY());
-			if (collider == brick) {
-				remove (brick);
+			if (collider == paddle) {
+				
 				vy = -vy;
 			}
 			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), ball.getY());
-			if (collider == brick) {
-				remove (brick);
+			if (collider == paddle) {
 				vy=-vy;
 			}
 			collider = getElementAt (ball.getX(), (ball.getY() + BALL_RADIUS*2));
-			if (collider == brick) {
-				remove (brick);
+			if (collider == paddle) {
 				vy = -vy;
 			}
 			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), (ball.getY() + BALL_RADIUS *2));
-			if (collider == brick) {
-				remove (brick);
+			if (collider == paddle) {
 				vy = -vy;
 			}
 	}
