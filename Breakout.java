@@ -81,6 +81,7 @@ public class Breakout extends GraphicsProgram {
 		
 		moveBall();
 		checkForCollisions();
+		pause (DELAY);
 		//checkForLastBrick ();
 		//game over or congratulations message
 	}
@@ -190,31 +191,38 @@ public class Breakout extends GraphicsProgram {
 		
 		while (NTURNS > 0) {
 		ball.move (vx,vy);
-		
-		
-		/* checking for walls */
-			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
-				vx = -vx;
-				pause (DELAY);
-			}
-			else if (ball.getX () < 0) {
-				vx = -vx;
-				pause (DELAY);
-			}
-			else if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
-				vy = -vy;
-				pause (DELAY);
-			}
-			else if (ball.getY() < 0)  {
-				vy = -vy;
-				pause (DELAY);
-				
-			}
 		}
 		
 	}
 	
-	    private void checkForCollisions () {
+	private void checkForCollisions () {
+		
+		checkForWalls();
+		checkForObjects();
+		
+	}
+	
+	private void checkForWalls() {
+	
+		/* checking for walls */
+			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
+				vx = -vx;
+			}
+			else if (ball.getX () < 0) {
+				vx = -vx;
+				}
+			else if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
+				vy = -vy;
+			}
+			else if (ball.getY() < 0)  {
+				vy = -vy;
+				
+			}
+		
+		
+	}
+	
+	    private void checkForObjects () {
 		
 		GObject collider = getElementAt (ball.getX(), ball.getY());
 			if (collider == brick) {
