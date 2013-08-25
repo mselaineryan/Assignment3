@@ -192,46 +192,55 @@ public class Breakout extends GraphicsProgram {
 		ball.move (vx,vy); 
 			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
 				vx = -vx;
-				//pause (DELAY);
-		}
+				pause (DELAY);
+			}
 			if (ball.getX () < 0) {
 				vx = -vx;
-				//pause (DELAY);
-		}
+				pause (DELAY);
+			}
 			if (ball.getY () + (BALL_RADIUS*2) > HEIGHT) {
 				vy = -vy;
-				//pause (DELAY);
-		}
+				pause (DELAY);
+			}
 			if (ball.getY() < 0)  {
 				vy = -vy;
-				//pause (DELAY);
-			
+				pause (DELAY);
+				
+			}
 		}
-		}
+		
 	}
 	
 	private void checkForCollisions () {
 		
-		collideWithObject ();
-
-		
-	}
-	
-	private void collideWithObject() {
-		if (ball != null) {
-			GObject collobj = getElementAt (ball.getX(), ball.getY());
-			if (collobj == paddle) {
+		GObject collider = getElementAt (ball.getX(), ball.getY());
+			if (collider == paddle) {
 				vy = -vy;
-			if (collobj == brick) {
-				vy = -vy;
-				remove (brick);
-				
 			}
-		}
-	
-	
-		}
+			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), ball.getY());
+			if (collider == paddle) {
+				vy=-vy;
+			}
+			collider = getElementAt (ball.getX(), (ball.getY() + BALL_RADIUS*2));
+			if (collider == paddle) {
+				vy = -vy;
+			}
+			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), (ball.getY() + BALL_RADIUS *2));
+			if (collider == paddle) {
+				vy = -vy;
+			}
 	}
+	
+	
+		
+		
+				
+		
+	
+	
+	
+		
+	
 		
 		
 			
