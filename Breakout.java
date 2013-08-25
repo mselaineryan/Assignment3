@@ -190,7 +190,7 @@ public class Breakout extends GraphicsProgram {
 		
 		while (NTURNS > 0) {
 		ball.move (vx,vy);
-		getCollidingObject ();
+		
 		
 		/* checking for walls */
 			if (ball.getX () + (BALL_RADIUS*2) > WIDTH) { 
@@ -214,7 +214,7 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	    private void getCollidingObject () {
+	    private void checkForCollisions () {
 		
 		GObject collider = getElementAt (ball.getX(), ball.getY());
 			if (collider == brick) {
