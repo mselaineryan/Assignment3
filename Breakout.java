@@ -188,21 +188,20 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void moveBall() {
-		while (true) {
-			vx = rgen.nextDouble (1.0, 3.0);
-			if (rgen.nextBoolean (0.5)) vx = -vx;
+		vx = rgen.nextDouble (1.0, 3.0);
+		if (rgen.nextBoolean (0.5)) vx = -vx;
 		
-		
-			ball.move (vx,vy);
-			pause (DELAY);
+		while (NTURNS > 0) {
+		ball.move (vx,vy);
+		pause (DELAY);
 		}
 		
 	}
 	
 	private void checkForCollisions () {
 		
-		//checkForWalls();
-		//checkForObjects();
+		checkForWalls();
+		checkForObjects();
 		
 	}
 	
@@ -236,24 +235,13 @@ public class Breakout extends GraphicsProgram {
 	
 	    private void checkForObjects () {
 		
-		GObject collider = getElementAt (ball.getX(), ball.getY());
-			if (collider == paddle) {
-				
-				vy = -vy;
-			}
-			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), ball.getY());
-			if (collider == paddle) {
-				vy=-vy;
-			}
-			collider = getElementAt (ball.getX(), (ball.getY() + BALL_RADIUS*2));
-			if (collider == paddle) {
-				vy = -vy;
-			}
-			collider = getElementAt ((ball.getX() + BALL_RADIUS *2), (ball.getY() + BALL_RADIUS *2));
-			if (collider == paddle) {
-				vy = -vy;
-			}
+	    	//getCollidingObjects();
 	}
+	    
+	    //private GObject getCollidingObjects() {
+	    	
+	    	
+	    
 	
 	
 		
