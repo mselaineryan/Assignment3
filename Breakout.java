@@ -260,7 +260,6 @@ public class Breakout extends GraphicsProgram {
 		
 	
 	
-	//private void 
 	
 	/* Instance variables*/
 	private GObject gobj; //the object being dragged
@@ -273,7 +272,7 @@ public class Breakout extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance ();
 	private double vx;
 	private double vy = 1.0;
-	private static final int DELAY = 200;
+	private static final int DELAY = 20;
 	private GRect paddle; 
 	private GRect brick;
 	
