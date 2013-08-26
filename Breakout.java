@@ -201,7 +201,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkForCollisions () {
 		
-		checkForObjects();
+		//getCollidingObjects();
 		
 	}
 	
@@ -233,9 +233,13 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	    private void checkForObjects () {
+	   /* private GObject getCollidingObjects () {
+	    	GObject object;
+	    	if (ball !=null) {
+	    		object = getElementAt
+	    	}
+	    	return (object);
 		
-	    	//getCollidingObjects();
 	}
 	    
 	    //private GObject getCollidingObjects() {
