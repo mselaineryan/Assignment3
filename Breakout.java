@@ -79,12 +79,13 @@ public class Breakout extends GraphicsProgram {
 	private void playGame() {
 	
 		
-		
-		moveBall();
-		checkForCollisions();
-		pause (DELAY);
+		while (NTURNS > 0) {
+			moveBall();
+			checkForCollisions();
+			pause (DELAY);
 		//checkForLastBrick ();
 		//game over or congratulations message
+		}
 		
 	}
 	
@@ -191,15 +192,16 @@ public class Breakout extends GraphicsProgram {
 		vx = rgen.nextDouble (1.0, 3.0);
 		if (rgen.nextBoolean (0.5)) vx = -vx;
 		
-		while (NTURNS > 0) {
+		
 		ball.move (vx,vy);
-		checkForWalls ();
-		pause (DELAY);
-		}
+		
+		
 		
 	}
 	
 	private void checkForCollisions () {
+		
+		checkForWalls ();
 		
 		//getCollidingObjects();
 		
