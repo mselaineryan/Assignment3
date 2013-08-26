@@ -193,6 +193,7 @@ public class Breakout extends GraphicsProgram {
 		
 		while (NTURNS > 0) {
 		ball.move (vx,vy);
+		checkForWalls ();
 		pause (DELAY);
 		}
 		
