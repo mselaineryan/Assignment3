@@ -233,14 +233,16 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	   /* private GObject getCollidingObjects () {
-	    	GObject object;
-	    	if (ball !=null) {
-	    		object = getElementAt
+	    private GObject getCollidingObjects () {
+	    	GObject object = getElementAt (ball.getX(), ball.getY());
+	    	if (ball != null)  {
+	    		return (object);
 	    	}
+	    	object = getElementAt (ball.getX() + 2*BALL_RADIUS, ball.getY());
+	    	
+	    
 	    	return (object);
-		
-	}
+	    }
 	    
 	    //private GObject getCollidingObjects() {
 	    	
